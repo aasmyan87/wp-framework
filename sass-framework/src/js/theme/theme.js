@@ -49,8 +49,10 @@ window.addEventListener('DOMContentLoaded', function() {
                 let menu_item_all = $('.general-menu_js > li');
                 let submenu = $(this).next();
                 let submenu_active = $('li.active .sub-menu_js')
-                if( html_document.hasClass('touch-screen') && $(this).next().length > 0 || $( window ).width() < menu_collapse_breakpoint ){
-                    e.preventDefault();
+                if( $(this).next().length > 0 ){
+                    if( html_document.hasClass('touch-screen') || $( window ).width() < menu_collapse_breakpoint ){
+                        e.preventDefault();
+                    }
                 }
 
                 menu_item_all.removeClass('active');
@@ -69,16 +71,19 @@ window.addEventListener('DOMContentLoaded', function() {
                 let submenu_sub = $(this).next();
                 submenu_item.toggleClass('active');
                 submenu_sub.slideToggle(200);
-                if( html_document.hasClass('touch-screen') && $(this).next().length > 0 || $( window ).width() < menu_collapse_breakpoint ){
-                    e.preventDefault();
+                if( $(this).next().length > 0 ){
+                    if( html_document.hasClass('touch-screen') || $( window ).width() < menu_collapse_breakpoint ){
+                        e.preventDefault();
+                    }
                 }
+
             });
             $(window).resize(function () {
                 $('.sub-menu_js').removeAttr('style');
                 $('.general-menu_js *').removeClass('active');
             });
         }
-        //fw_mobile_menu();
+        // fw_mobile_menu();
 
         //  Flipping Menu
         function fw_mobile_flipping_menu(){
@@ -118,12 +123,14 @@ window.addEventListener('DOMContentLoaded', function() {
                 let menu_item_active = $('.general-menu_js li.active');
                 let menu_item_all = $('.general-menu_js > li');
                 let submenu = $(this).next();
-                menu_close_button.addClass('hide');
-                menu_close_sub_button.addClass('active')
-                let submenu_active = $('li.active .sub-menu_js')
-                if( html_document.hasClass('touch-screen') && $(this).next().length > 0 || $( window ).width() < menu_collapse_breakpoint ){
-                    e.preventDefault();
+                if( $(this).next().length > 0 ){
+                    menu_close_button.addClass('hide');
+                    menu_close_sub_button.addClass('active');
+                    if( html_document.hasClass('touch-screen') || $( window ).width() < menu_collapse_breakpoint ){
+                        e.preventDefault();
+                    }
                 }
+
 
                 menu_item_all.removeClass('active');
                 if(menu_item.hasClass('active')){
@@ -137,12 +144,13 @@ window.addEventListener('DOMContentLoaded', function() {
             //  Submenu
             $(".sub-menu_js li  a").click(function (e) {
                 let submenu_item = $(this).parent();
-                let submenu_sub = $(this).next();
                 submenu_item.toggleClass('active');
-                menu_close_sub_button.addClass('menu-close-sub-btn_js_2');
-                menu_close_sub_button.removeClass('menu-close-sub-btn_js');
-                if( html_document.hasClass('touch-screen') && $(this).next().length > 0 || $( window ).width() < menu_collapse_breakpoint ){
-                    e.preventDefault();
+                if( $(this).next().length > 0 ){
+                    menu_close_sub_button.addClass('menu-close-sub-btn_js_2');
+                    menu_close_sub_button.removeClass('menu-close-sub-btn_js');
+                    if( html_document.hasClass('touch-screen') || $( window ).width() < menu_collapse_breakpoint ){
+                        e.preventDefault();
+                    }
                 }
                 $('.menu-close-sub-btn_js_2').click(function (){
                     $('.sub-menu_js li').removeClass('active');
