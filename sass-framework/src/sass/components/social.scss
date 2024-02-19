@@ -1,0 +1,29 @@
+@import "../abstracts/variables/variables-theme";
+.fw-social{
+  font-size: 22px;
+  &--list{
+    display: flex;
+    align-items: center;
+    margin: 0 -5px;
+    li{
+      margin: 0;
+      padding: 0 5px;
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: map-get($colors, secondary);
+        color: map-get($colors, primary);
+        width: 43px;
+        height: 43px;
+        border-radius: 100%;
+        &:hover{
+          opacity: .8;
+        }
+        &:visited{
+          color: map-get($colors, primary);
+        }
+      }
+    }
+  }
+}

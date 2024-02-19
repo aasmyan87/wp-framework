@@ -1,0 +1,300 @@
+@import "../abstracts/variables/variables-theme";
+
+$il-checkbox-checkmark-css-icon: true;
+$il-checkbox-checkmark-font-icon: false;
+$il-checkbox-checkmark-img-icon: false;
+
+.fw-chk-rad {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0;
+  cursor: pointer;
+
+
+  span {
+    display: inline-block;
+    position: relative;
+  }
+
+  > input {
+    position: absolute !important;
+    opacity: 0;
+    outline: none;
+    clip: rect(0 0 0 0);
+
+    + span {
+      &:before {
+        content: "";
+        display: inline-block;
+        box-sizing: border-box;
+        transition: .2s;
+        border-style: solid;
+        position: relative;
+        float: left;
+      }
+
+      &:after {
+        animation: check_scale .1s .1s alternate backwards;
+      }
+    }
+
+    &:checked + span {
+      &:before {
+        animation: check_blick 1s .2s alternate backwards;
+      }
+
+      &:after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        display: inline-block;
+      }
+    }
+
+    &:disabled {
+      cursor: default;
+
+      + span,
+      + span::before {
+        pointer-events: none;
+        cursor: default;
+        filter: alpha(opacity=65);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        opacity: .65;
+      }
+    }
+
+    &::-ms-check {
+      opacity: 0;
+      border-radius: 50%;
+    }
+  }
+
+  //  Checkbox
+  > input[type="checkbox"] {
+    &:checked + span {
+      @if $il-checkbox-checkmark-css-icon {
+        &:after {
+          border-style: solid;
+          border-width: 2px;
+          border-left: none;
+          border-top: none;
+          transform: translate(7px, 2px) rotate(45deg);
+        }
+      }
+      @if $il-checkbox-checkmark-font-icon {
+        &:after {
+          font-family: FontAwesome;
+          transform: none;
+          border: none;
+        }
+      }
+      @if $il-checkbox-checkmark-img-icon {
+        &:after {
+          background-repeat: no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+  }
+
+  //  Radio
+  > input[type="radio"] {
+    + span {
+      &:before {
+        border-radius: 50%;
+      }
+    }
+
+    &:checked {
+      + span {
+        &:before {
+          background-color: transparent !important;
+          border-radius: 50%;
+        }
+
+        &:after {
+          border-radius: 50%;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+//  Generator for checkbox and radios variants
+@mixin ch-rd-variant($variant: ()) {
+  //  If you want to have default variables, remove checkbox variants below, and uncomment styles here
+
+  //  define class
+  #{map-get($variant, class)} {
+    line-height: map-get($variant, label-line-height);
+    font-weight: map-get($variant, label-font-weight);
+
+    > input {
+      &:focus + span {
+        &:before {
+          box-shadow: map-get($variant, box-shadow);
+        }
+      }
+
+      + span {
+        &:before {
+          width: map-get($variant, checkbox-radio-size);
+          height: map-get($variant, checkbox-radio-size);
+          border-color: map-get($variant, border-color);
+          border-width: map-get($variant, checkbox-radio-border-width);
+          background-color: map-get($variant, background-color);
+        }
+      }
+
+      &:checked {
+        + span {
+          &:before {
+            border-color: map-get($variant, border-color--CHECKED);
+            box-shadow: none;
+          }
+        }
+      }
+
+      &:not(:checked):not(:disabled):hover {
+        + span::before {
+          border-color: map-get($variant, border-color--HOVER);
+          background-color: map-get($variant, background-color--HOVER);
+        }
+      }
+    }
+
+    > input[type="checkbox"] {
+      + span {
+        &:before {
+          border-radius: map-get($variant, checkbox-border-radius);
+          top: map-get($variant, checkbox-radio-top-pos);
+          margin-right: map-get($variant, checkbox-radio-right-space);
+        }
+      }
+
+      &:checked {
+        + span {
+          &:before {
+            background-color: map-get($variant, background-color--CHECKED);
+          }
+
+          @if $il-checkbox-checkmark-css-icon {
+            &:after {
+              top: map-get($variant, checkbox-checkmark-pos-top);
+              left: map-get($variant, checkbox-checkmark-pos-left);
+              width: map-get($variant, checkbox-checkmark-width);
+              height: map-get($variant, checkbox-checkmark-height);
+              border-bottom-color: map-get($variant, checkbox-checkmark-color);
+              border-right-color: map-get($variant, checkbox-checkmark-color);
+            }
+          }
+          @if $il-checkbox-checkmark-font-icon {
+            &:after {
+              top: map-get($variant, checkbox-checkmark-pos-top);
+              left: map-get($variant, checkbox-checkmark-pos-left);
+              content: map-get($variant, checkbox-checkmark-icon);
+              color: map-get($variant, checkbox-checkmark-color);
+              font-size: map-get($variant, checkbox-checkmark-icon-size);
+            }
+          }
+          @if $il-checkbox-checkmark-img-icon {
+            &:after {
+              background-image: map-get($variant, checkbox-checkmark-img);
+              width: map-get($variant, checkbox-checkmark-width);
+              height: map-get($variant, checkbox-checkmark-height);
+              top: map-get($variant, checkbox-checkmark-pos-top);
+              left: map-get($variant, checkbox-checkmark-pos-left);
+            }
+          }
+        }
+      }
+    }
+
+    > input[type="radio"] {
+      + span {
+        &:before {
+          top: map-get($variant, checkbox-radio-top-pos);
+          margin-right: map-get($variant, checkbox-radio-right-space);
+        }
+      }
+
+      &:checked + span {
+        &:after {
+          background-color: map-get($variant, radio-checkmark-color);
+          width: map-get($variant, radio-checkmark-size);
+          height: map-get($variant, radio-checkmark-size);
+          @if map-get($variant, checkbox-radio-size) and map-get($variant, radio-checkmark-size) {
+            top: (map-get($variant, checkbox-radio-size) - map-get($variant, radio-checkmark-size))/2 + map-get($variant, checkbox-radio-top-pos);
+            left: (map-get($variant, checkbox-radio-size) - map-get($variant, radio-checkmark-size))/2;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Sizes
+@include ch-rd-variant((
+        class: (
+                '.fw-chk-rad'
+        ),
+  //  Label
+        label-line-height: 1.7,
+        label-font-weight: null,
+  //  Checkbox and Radio
+        checkbox-radio-size: 16px,
+        checkbox-radio-border-width: 1px,
+        checkbox-radio-top-pos: 5px,
+        checkbox-radio-right-space: 8px,
+  //  Checkbox
+        checkbox-border-radius: 0,
+  //  if use css icon
+        checkbox-checkmark-pos-top: 5px,
+        checkbox-checkmark-pos-left: -1px,
+        checkbox-checkmark-width: 5px,
+        checkbox-checkmark-height: 9px,
+  // if use font icon
+        checkbox-checkmark-icon:"\f00c",
+        checkbox-checkmark-icon-size: 25px,
+  // if use bg image icon
+        checkbox-checkmark-img: url("../images/favicon.png"),
+  //  Radio
+        radio-checkmark-size: 8px,
+));
+
+//  Colors
+@include ch-rd-variant((
+        class: '.chk-rad-primary',
+        background-color: #fff,
+        background-color--HOVER: #fafafa,
+        background-color--CHECKED: map-get($colors, primary),
+        box-shadow: 0 0 2px 1px rgba(#787878, .8),
+        border-color: #787878,
+        border-color--HOVER: #a3a3a3,
+        border-color--CHECKED: map-get($colors, primary),
+        checkbox-checkmark-color: #fff,
+        radio-checkmark-color: map-get($colors, primary),
+))
+
+
+//  Animations
+@keyframes check_blick {
+  0% {
+    box-shadow: 0 0 5px 1px rgba(map-get($colors, primary), .4);
+  }
+  100% {
+    box-shadow: 0 0 5px 1px rgba(map-get($colors, primary), 0);
+  }
+}
+
+@keyframes check_opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

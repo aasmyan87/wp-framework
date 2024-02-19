@@ -1,0 +1,343 @@
+@import "../abstracts/variables/variables-theme";
+//  CORE STYLES
+.fw-menu {
+  @media screen and (min-width: $media_before_collapse) {
+    height: 100%;
+  }
+  &--mobile-body{
+    height: 100%;
+  }
+  //  Menu: Body
+  &--nav {
+    font-family: $menu-font-family;
+    line-height: $desktop_menu_line_height;
+    font-size: $desktop_menu_font_size;
+    margin-left: $desktop_menu_margin_left;
+    margin-right: $desktop_menu_margin_right;
+    text-transform: $desktop_menu_text_transform;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-weight: 600;
+    letter-spacing: -.5px;
+    @include media-breakpoint-down(xl){
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    @media screen and (min-width: $media_before_collapse) {
+      height: 100%;
+    }
+    @media screen and (max-width: 1100px) {
+      font-size: 16px;
+
+    }
+    li {
+      padding: 0;
+      margin: 0;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      ul, li {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      a {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        transition: color $desktop_menu_item_transition, background-color $desktop_menu_item_transition;
+      }
+    }
+  }
+
+  &--nav > li {
+    height: $desktop_menu_item_height;
+    margin: $desktop_menu_item_margin;
+    //  Menu: Item
+    > a {
+      padding: $desktop_menu_item_padding;
+      height: $desktop_menu_item_height;
+      color: $desktop_menu_item_color;
+      border-radius: $desktop_menu_item_border_radius;
+      position: relative;
+      @media screen and (max-width: 1100px) {
+        padding: 0 10px;
+      }
+    }
+
+    &:hover {
+      &:before, &:after{
+        @media screen and (min-width: $media_before_collapse) {
+          content: '';
+          position: absolute;
+          width: 60px;
+          height: 40%;
+          z-index: 2;
+        }
+      }
+      &:before{
+        @media screen and (min-width: $media_before_collapse) {
+          clip-path: polygon(100% 0,0% 100%,100% 100%);
+          left: -60px;
+          bottom: 0;
+        }
+      }
+      &:after{
+        @media screen and (min-width: $media_before_collapse) {
+          clip-path: polygon(0 0,0% 100%,100% 100%);
+          right: -60px;
+          bottom: 0;
+        }
+      }
+      > a {
+        @media screen and (min-width: $media_before_collapse) {
+          color: $desktop_menu_item_color_hover;
+          background-color: $desktop_menu_item_bg_color_hover;
+        }
+      }
+
+      // Sub First: Expand
+      > .fw-menu--sub-container {
+        @media screen and (min-width: $media_before_collapse) {
+          animation: sub-menu-expand--first .2s 0s linear alternate backwards;
+          display: block !important;
+        }
+      }
+    }
+
+    //  Item Is Current
+    &.current_page_item > a {
+      @media screen and (min-width: $media_before_collapse) {
+        background-color: $desktop_menu_item_bg_color_hover;
+        color: $desktop_menu_item_color_hover;
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  //  Menu Sub: styles
+  &--sub {
+    font-size: $desktop_submenu_item_font_size;
+    font-family: $menu_font_family;
+    text-transform: $desktop_submenu_item_text_transform;
+    background-color: $desktop_submenu_bg_color;
+    margin: auto !important;
+    padding-top: $desktop_submenu_padding_y;
+    padding-bottom: $desktop_submenu_padding_y;
+    box-shadow: $desktop_submenu_box_shadow;
+    position: static;
+    font-weight: normal;
+    letter-spacing: normal;
+    &-container{
+      width: 100%;
+      @media screen and (min-width: $media_before_collapse) {
+        box-shadow: $desktop_submenu_box_shadow;
+        display: flex;
+        justify-content: center;
+        left: 0;
+        background-color: $desktop_submenu_bg_color;
+        position: absolute;
+        top: 100%;
+        width: $desktop_submenu_width;
+      }
+      @media screen and (min-width: $media_before_collapse) {
+        display: none !important;
+      }
+    }
+    @media screen and (min-width: $media_before_collapse) {
+      height: auto !important;
+    }
+    //  Sub: Item
+    > li {
+      &:hover {
+        //  Sub Second: Expand
+        .fw-menu--sub-container {
+          @media screen and (min-width: $media_before_collapse) {
+            animation: sub-menu-expand--second .2s 0s linear alternate backwards;
+            left: $desktop_submenu_width - 1px;
+            top: 0 !important;
+            display: block !important;
+          }
+        }
+      }
+      > a:hover {
+        @media screen and (min-width: $media_before_collapse) {
+          color: $desktop_submenu_item_color_hover;
+          background-color: $desktop_submenu_item_bg_color_hover;
+        }
+      }
+
+      &.current_page_item {
+        > a {
+          color: $desktop_submenu_item_color_hover;
+          background-color: $desktop_submenu_item_bg_color_hover;
+        }
+      }
+    }
+
+    > li a {
+      display: flex;
+      padding: $desktop_submenu_item_padding;
+      color: $desktop_submenu_item_color;
+      width: 100%;
+    }
+
+    //  Menu: Display none 3rd Level
+    > li {
+      > ul {
+        li ul,
+        li.menu-item-has-children a::after,
+        li.menu-item-has-children .mobile-menu-icon {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  //  Mobile Head: Display None
+  &--mobile-head {
+    display: none;
+  }
+}
+
+
+// ANIMATION: submenu expand
+@keyframes sub-menu-expand--first {
+  0% {
+    transform: translate(0, -5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+// ANIMATION: nested submenu expand
+@keyframes sub-menu-expand--second {
+  0% {
+    transform: translate(-10px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+//  EXTENSIONS: desktop menu underline hover
+.fw-menu--nav{
+  > li{
+    > a::before{
+      @media screen and (min-width: $media_before_collapse) {
+        height: $ext_dmiuh_height;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 0;
+        margin: auto;
+        background-color: transparent;
+        transition: width $desktop_menu_item_transition, background-color $desktop_menu_item_transition;
+      }
+      @if($desktop_menu_item_border_radius != null) {
+        @media screen and (min-width: $media_before_collapse) {
+          border-bottom-left-radius: $desktop_menu_item_border_radius;
+          border-bottom-right-radius: $desktop_menu_item_border_radius;
+        }
+      }
+    }
+    &:hover > a::before{
+      @media screen and (min-width: $media_before_collapse) {
+        width: $ext_dmiuh_width;
+        background-color: $ext_dmiuh_bg_color;
+      }
+    }
+    &.current_page_item > a::before {
+      @media screen and (min-width: $media_before_collapse) {
+        width: 0;
+        background-color: transparent;
+
+      }
+    }
+  }
+}
+
+//  EXTENSIONS: desktop menu icon
+.fw-menu--nav{
+  > li.menu-item-has-children{
+    > a::after{
+      @media screen and (min-width: $media_before_collapse) {
+        font-family: $ext_dmi_font_family;
+        font-weight: $ext_dmi_weight;
+        font-size: $ext_dmi_font_size;
+        margin-left: $ext_dmi_margin_left;
+        transition: $desktop_menu_item_transition;
+        color: $ext_dmi_color;
+        content: $ext_dmi_icon_symbol;
+      }
+    }
+    &:hover > a::after{
+      @media screen and (min-width: $media_before_collapse) {
+        transform: rotate(-180deg);
+        color: $ext_dmi_color__hover;
+      }
+    }
+  }
+}
+
+
+//  EXTENSIONS: desktop sub menu icon
+.fw-menu--sub {
+  > li{
+    &.menu-item-has-children > a::after{
+      @media screen and (min-width: $media_before_collapse) {
+        font-family: $ext_dsmi_font_family;
+        font-weight: $ext_dsmi_weight;
+        font-size: $ext_dsmi_font_size;
+        transition: margin $desktop_menu_item_transition;
+        color: $ext_dsmi_icon_color;
+        content: $ext_dsmi_icon_symbol;
+      }
+    }
+    &:hover > a::after {
+      @media screen and (min-width: $media_before_collapse) {
+        margin-right: -5px;
+        color: $ext_dsmi_icon_color__hover;
+      }
+    }
+  }
+}
+
+
+//  EXTENSIONS: desktop sub menu bottom border
+.fw-menu--sub{
+  @media screen and (min-width: $media_before_collapse) {
+    border-bottom: $ext_dsmbb_border_width solid $ext_dsmbb_border_color;
+  }
+}
+
+.parent-menu-item{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+

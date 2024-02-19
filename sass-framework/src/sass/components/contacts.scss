@@ -1,0 +1,21 @@
+.fw-contact{
+  &--list{
+    li{
+      margin-bottom: 5px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  &--link{
+    display: inline-flex;
+    align-items: center;
+
+  }
+  &--address{
+    display: flex;
+  }
+  &--icon{
+    margin-right: 7px;
+  }
+}

@@ -1,0 +1,32 @@
+//  Desktop
+$hrz_tabs_head_font_size: 18px;
+$hrz_tabs_head_font_weight: null;
+$hrz_tabs_head_text_transform: null;
+$hrz_tabs_content_font_size: null;
+$hrz_tabs_content_padding: 15px;
+$hrz_tabs_content_color: #000;
+$hrz_tabs_content_bg_color:  #fff;
+$hrz_tabs_tab_padding: 10px 45px;
+$hrz_tabs_tab_color: #000;
+$hrz_tabs_tab_color_hover: #fff;
+$hrz_tabs_tab_color_active: #fff;
+$hrz_tabs_tab_bg_color: #eee;
+$hrz_tabs_tab_bg_color_hover: rgba(map_get($colors, primary), .8);
+$hrz_tabs_tab_bg_color_active: map_get($colors, primary);
+
+//  Mobile
+$hrz_tabs_first_child_open: true; // if false, remove active class from html 'acc-nav_js'
+$hrz_tabs_mob_tab_font_size: null;
+$hrz_tabs_mob_tab_font_weight: null;
+$hrz_tabs_mob_tab_text_transform: null;
+$hrz_tabs_mob_tab_padding: 10px 15px;
+$hrz_tabs_mob_tab_color: #000;
+$hrz_tabs_mob_tab_color_active: #fff;
+$hrz_tabs_mob_tab_bg_color: null;
+$hrz_tabs_mob_tab_bg_color_active: map-get($colors, secondary);
+$hrz_tabs_mob_tab_border_color: map-get($colors, secondary);
+$hrz_tabs_mob_content_font_size: null;
+$hrz_tabs_mob_content_padding: null;
+$hrz_tabs_mob_content_color: null;
+$hrz_tabs_mob_content_bg_color: null;
+$hrz_tabs_breakpoint: md;

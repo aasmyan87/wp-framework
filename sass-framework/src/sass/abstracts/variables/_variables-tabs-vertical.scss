@@ -1,0 +1,33 @@
+
+//  Desktop
+$vrt_tabs_head_font_size: 18px;
+$vrt_tabs_head_font_weight: null;
+$vrt_tabs_head_text_transform: null;
+$vrt_tabs_content_font_size: null;
+$vrt_tabs_content_padding: null;
+$vrt_tabs_content_color: #000;
+$vrt_tabs_content_bg_color:  #fff;
+$vrt_tabs_tab_padding: 10px 15px;
+$vrt_tabs_tab_color: #000;
+$vrt_tabs_tab_color_hover: #fff;
+$vrt_tabs_tab_color_active: #fff;
+$vrt_tabs_tab_bg_color: #eee;
+$vrt_tabs_tab_bg_color_hover: rgba(map_get($colors, primary), .8);
+$vrt_tabs_tab_bg_color_active: map_get($colors, primary);
+
+//  Mobile
+$vrt_tabs_first_child_open: true; // // if false, remove active class from html 'acc-nav_js'
+$vrt_tabs_mob_head_font_size: null;
+$vrt_tabs_mob_head_font_weight: null;
+$vrt_tabs_mob_head_text_transform: null;
+$vrt_tabs_mob_content_font_size: null;
+$vrt_tabs_mob_content_padding: 15px;
+$vrt_tabs_mob_content_color: null;
+$vrt_tabs_mob_content_bg_color: null;
+$vrt_tabs_mob_tab_padding: 10px 15px;
+$vrt_tabs_mob_tab_color: #000;
+$vrt_tabs_mob_tab_color_active: #fff;
+$vrt_tabs_mob_tab_bg_color: null;
+$vrt_tabs_mob_tab_bg_color_active: map-get($colors, secondary);
+$vrt_tabs_mob_tab_border_color: map-get($colors, secondary);
+$vrt_tabs_breakpoint: md;

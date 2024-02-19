@@ -1,0 +1,37 @@
+@import "../abstracts/variables/variables-theme";
+//  Wordpress default pagination
+.fw-pagination{
+  margin-top: 30px;
+  .nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -5px;
+    margin-right: -5px;
+    font-weight: 500;
+  }
+  a,span{
+    max-width: 35px;
+    flex: 0 0 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+  }
+  a{
+    background-color: map-get($colors, primary);
+    color: #fff;
+    &:hover{
+      background-color: map-get($colors, secondary);
+    }
+  }
+  .current{
+    background-color: map-get($colors, secondary);
+    color: #fff;
+  }
+  svg{
+    width: 15px;
+    height: 15px;
+  }
+}

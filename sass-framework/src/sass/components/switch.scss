@@ -1,0 +1,88 @@
+@import "../abstracts/variables/variables-theme";
+
+.fw-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  max-width: 50px;
+  flex: 0 0 50px;
+  height: 24px;
+  margin: 0;
+  span:first-of-type{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+    &:before {
+      position: absolute;
+      border-radius: 50%;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+  }
+  input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked{
+      + span{
+        box-shadow: none;
+        &:before{
+          transform: translateX(25px);
+        }
+      }
+    }
+    &:focus{
+      + span{
+          box-shadow: 0 0 2px 1px rgba(#000, .4);
+      }
+    }
+  }
+}
+
+//  Generator for switch variants
+@mixin switch-variant($variant: ()) {
+  //  define class
+  #{map-get($variant, class)}{
+    span:first-of-type{
+      background-color: map-get($variant, switch-bg-color);
+      &:before{
+        background-color: map-get($variant, switch-round-bg-color);
+      }
+    }
+    input{
+      &:checked{
+        + span{
+          background-color: map-get($variant, switch-bg-color--SWITCHED);
+          &:before{
+            background-color: map-get($variant, switch-round-bg-color--SWITCHED);
+          }
+        }
+      }
+    }
+  }
+}
+@include switch-variant((
+      class: '.switch-primary',
+      switch-bg-color: #cecece,
+      switch-round-bg-color: map-get($colors, primary),
+      switch-bg-color--SWITCHED: map-get($colors, secondary),
+      switch-round-bg-color--SWITCHED:#eee
+));
+@include switch-variant((
+      class: '.switch-secondary',
+      switch-bg-color: #cecece,
+      switch-round-bg-color:  map-get($colors, secondary),
+      switch-bg-color--SWITCHED: map-get($colors, primary),
+      switch-round-bg-color--SWITCHED:#eee
+));

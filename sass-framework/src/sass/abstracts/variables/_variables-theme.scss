@@ -1,0 +1,193 @@
+@import "../inc/functions";
+
+//  Theme Colors
+$colors: (
+    primary: #3C3F41,
+    secondary: #ac9d24,
+    error-color: #dc1010,
+    white: #fff,
+    dark: #2B2B2B
+);
+
+//  Body
+$body_bg_color: #fff;
+$body_color: #2b2b2b;
+$body_font_family: 'Montserrat', sans-serif;
+$body_font_size: 18px;
+$body_font_weight: 300;
+$body_line_height: 1.7;
+$body_letter_spacing: null;
+$body_mob_breakpoint: sm;
+$body_mob_font_size: null;
+$body_mob_line_height: null;
+
+//  Headings
+$headings_color: #000;
+$headings_font_family: 'Montserrat', sans-serif;
+$headings_line_height: 1.2;
+$headings_font_weight: bold;
+$headings_text_transform: uppercase;
+$headings_letter_spacing: null;
+$headings_margin_bottom: 15px;
+//  H1
+$h1_font_size: 60px;
+$h1_line_height: null;
+$h1_margin_bottom: null;
+$h1_mob_breakpoint: sm;
+$h1_mob_font_size: 50px;
+$h1_mob_line_height: null;
+$h1_mob_margin_bottom: null;
+//  H2
+$h2_font_size: 40px;
+$h2_line_height: null;
+$h2_margin_bottom: null;
+$h2_mob_breakpoint: sm;
+$h2_mob_font_size: 40px;
+$h2_mob_line_height: null;
+$h2_mob_margin_bottom: null;
+//  H3
+$h3_font_size: 35px;
+$h3_line_height: null;
+$h3_margin_bottom: null;
+$h3_mob_breakpoint: sm;
+$h3_mob_font_size: 35px;
+$h3_mob_line_height: null;
+$h3_mob_margin_bottom: null;
+//  H4
+$h4_font_size: 30px;
+$h4_line_height: null;
+$h4_margin_bottom: null;
+//  H5
+$h5_font_size: 25px;
+$h5_line_height: null;
+$h5_margin_bottom: null;
+//  H6
+$h6_font_size: 20px;
+$h6_line_height: null;
+$h6_margin_bottom: null;
+
+//  Paragraph
+$paragraph_margin_bottom: 30px;
+
+//  Link
+$link_color: map_get($colors, secondary);
+$link_color_visited: $link_color;
+$link_hover_color: rgba(map_get($colors, secondary), .8);
+$link_hover_text_decoration: none;
+$link_text_decoration: none;
+$link_transition: .3s;
+
+//  Button, Input transition
+$input_btn_transition: .3s;
+
+//  Lists (ul;ol)
+$list_margin: 30px 0;
+$list_padding: 0 0 0 35px;
+$list_child_margin: 0 0 15px 0;
+$list_child_padding: 0;
+$list_mob_margin: 15px 0;
+$list_mob_padding: 0 0 0 32px;
+$list_breakpoint: sm;
+
+
+//  Table
+$table_caption_color: map_get($colors, secondary);
+$td_th_border_color: #dee2e6;
+$td_th_padding: 10px;
+
+//  Blockquote
+$blockquote_margin: 0 0 30px 0;
+$blockquote_padding: 0 0 0 30px;
+$blockquote_border_width: 5px;
+$blockquote_border_color: map_get($colors, primary);
+
+//  Label
+$label_color: #000;
+$label_font_size: 16px;
+$label_font_weight: normal;
+$label_margin: 0 0 5px;
+$label_line_height: 1.2;
+
+//  Small
+$small_font_size: 80%;
+$mark_padding: 5px;
+$mark_bg_color: yellow;
+
+//  Sub, Sup
+$sub_sup_font-size: 75%;
+
+//  Pre, Code
+$pre_code_font_family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$pre_code_font_size: $sub_sup_font-size;
+$pre_code_pre_color: null;
+$pre_code_code_color: gray;
+
+//  KBD
+$kbd_color: #fff;
+$kbd_bg_color: map_get($colors, primary);
+$kbd_font_size: $small_font_size;
+$kbd_padding_y: .2rem;
+$kbd_padding_x: .4rem;
+
+//  HR
+$hr_margin_y: 15px;
+$hr_opacity: .4;
+$hr_height: 1px;
+
+//  Container
+$container: (
+    xxl: 1320px
+);
+
+//  Row
+$grid: (
+    columns: 12,
+    gutter_width: 30px
+);
+
+//  Breakpoints
+$breackpoint: (
+    xs:  0,
+    sm:  600px,
+    md:  768px,
+    lg:  1024px,
+    xl:  1200px,
+    xxl: 1400px
+);
+
+//  Spaces
+$spaces: (
+    10: 10px,
+    15: 15px,
+    30: 30px
+);
+
+//  Web Icons Font Family
+$web_icon_font_family: 'fontello';
+
+//  Section
+$section_bg_color: #fff;
+$section_padding_top: 60px;
+$section_padding_bottom: 60px;
+$section_breakpoint: lg;
+$section_mob_padding_top: 30px;
+$section_mob_padding_bottom: 30px;
+$section_head_font_size: 16px;
+$section_head_line_height: 1.4;
+$section_head_margin: 0 0 30px;
+$section_head_color: map_get($colors, secondary);
+$section_title_font_size: null;
+$section_title_line_height: null;
+$section_title_margin: null;
+$section_title_color: null;
+
+@import "variables-bootstrap";
+@import "variable-header-menu";
+@import "variables-slick-slider";
+@import "variables-tabs-vertical";
+@import "variables-tabs-horizontal";
+@import "variables-accordion";
+@import "../../../bootstrap/functions";
+@import "../../../bootstrap/variables";
+@import "../../../bootstrap/mixins";
+@import "../inc/mixins";
