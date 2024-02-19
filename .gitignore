@@ -11,7 +11,7 @@
 /wp-content/themes/twentytwentytwo/
 /wp-content/themes/twentytwentytwo/*
 /wp-admin/
-/wp-content/plugins/
+!/plugins/advanced-custom-fields-pro/
 /wp-content/webp-express/
 wp-config.php
 .htaccess
