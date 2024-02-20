@@ -1,0 +1,35 @@
+$theme-colors: (map-merge($colors, ()));
+$font-family-code: $pre_code_font_family;
+$paragraph-margin-bottom: $paragraph_margin_bottom;
+$link-decoration: $link_text_decoration;
+$link-hover-decoration: $link_hover_text_decoration;
+$link-color: $link_color;
+$link-hover-color: $link_hover_color;
+$small-font-size: $small_font_size;
+$mark-padding: $mark_padding;
+$mark-bg: $mark_bg_color;
+$sub-sup-font-size: $sub_sup_font-size;
+$code-font-size: $pre_code_font_size;
+$pre-color: $pre_code_code_color;
+$code-color: $pre_code_code_color;
+$kbd-font-size: $kbd_font_size;
+$kbd-padding-y: $kbd_padding_y;
+$kbd-padding-x: $kbd_padding_x;
+$kbd-color: $kbd_color;
+$kbd-bg: $kbd_bg_color;
+$hr-margin-y: $hr_margin_y;
+$hr-opacity: $hr_opacity;
+$hr-height: $hr_height;
+$table-caption-color: $table_caption_color;
+$grid-columns: map-get($grid, columns);
+$grid-gutter-width: map-get($grid, gutter_width);
+$grid-breakpoints: (map-merge($breackpoint, ()));
+$grid-row-columns: 0;
+$container-max-widths: (map-merge($container, ()));
+$spacer: 1rem !default;
+$spacers: (map-merge($spaces, ()));
+$display-font-sizes: ();
+$enable-rfs: false;
+$enable-reduced-motion: false;
+$enable-smooth-scroll: false
+
