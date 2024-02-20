@@ -261,7 +261,9 @@ function fw_get_mobile_menu_logo(){
             <?php fw_get_picture( array( $header_mobile_menu_logo_1x, '' ), array( $header_mobile_menu_logo_2x, '' ), '', '', true, $site_title, '' ); ?>
         </a>
     <?php else: ?>
-        No Logo
+        <a title="<?php echo $site_title; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            Logo
+        </a>
     <?php endif; ?>
     <?php
 }
@@ -277,7 +279,9 @@ function fw_get_desktop_header_logo(){
             <?php fw_get_picture( array( $header_logo_1x, '', '1x' ), array( $header_logo_2x, '', '2x' ), '', true, '', $site_title, '' ); ?>
         </a>
     <?php else: ?>
-        <span class="d-none d-lg-block">No Logo</span>
+        <a title="<?php echo $site_title; ?>" class="fw-logo d-none d-lg-block" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            Logo
+        </a>
     <?php endif; ?>
     <?php
 }
@@ -293,7 +297,9 @@ function fw_get_mobile_header_logo(){
             <?php fw_get_picture( array( $header_logo_mobile_1x, '' ), array( $header_logo_mobile_2x, '' ), '', true, '', $site_title, '' ); ?>
         </a>
     <?php else: ?>
-        <span class="d-lg-none">No Logo</span>
+        <a title="<?php echo $site_title; ?>" class="fw-logo d-lg-none" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            Logo
+        </a>
     <?php endif; ?>
     <?php
 }

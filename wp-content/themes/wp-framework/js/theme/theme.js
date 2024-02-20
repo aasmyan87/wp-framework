@@ -121,7 +121,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 menu_close_button.addClass('hide');
                 menu_close_sub_button.addClass('active')
                 let submenu_active = $('li.active .sub-menu_js')
-                if( html_document.hasClass('touch-screen') && $(this).next().length > 0 || $( window ).width() < menu_collapse_breakpoint ){
+                if( html_document.hasClass('touch-screen') && $(this).next().length > 0 && $( window ).width() < menu_collapse_breakpoint ){
                     e.preventDefault();
                 }
 
@@ -141,7 +141,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 submenu_item.toggleClass('active');
                 menu_close_sub_button.addClass('menu-close-sub-btn_js_2');
                 menu_close_sub_button.removeClass('menu-close-sub-btn_js');
-                if( html_document.hasClass('touch-screen') && $(this).next().length > 0 || $( window ).width() < menu_collapse_breakpoint ){
+                if( html_document.hasClass('touch-screen') && $(this).next().length > 0 || $( window ).width() < menu_collapse_breakpoint && $(this).next().length = 0 ){
                     e.preventDefault();
                 }
                 $('.menu-close-sub-btn_js_2').click(function (){
