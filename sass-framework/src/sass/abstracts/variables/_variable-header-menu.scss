@@ -1,0 +1,138 @@
+//  Fonts
+$menu-font-family: null;
+//  Menu Direction
+$menu_direction: 'left'; // left | right | full
+$menu_open_transition: .5s;
+$menu_full_open_transition: .4s;
+
+//  Menu Collapse Breakpoint
+$media_after_collapse: 1023px;
+$media_before_collapse: $media_after_collapse + 1px;
+
+//  Header
+$header_height: 80px; //  required
+$header_height_mob: 50px;
+$header_bg_color: #fff;
+$header_box_shadow: 0px 8px 6px -4px rgba(#000, 0.1);
+$header_logo_width: 200px; // required
+$header_logo_width_mob: 120px; // required
+$header_container_width: map-get($container, xxl); // required
+$header_container_padding_x:  map-get($grid, gutter_width) * .5; // required
+
+//  Desktop Menu
+$desktop_menu_font_size: 16px;
+$desktop_menu_line_height: 1;
+$desktop_menu_text_transform: uppercase;
+$desktop_menu_margin_left: 30px;
+$desktop_menu_margin_right: 0;
+$desktop_menu_item_margin: null;
+$desktop_menu_item_padding: 0 10px;
+$desktop_menu_item_height: 100%;
+$desktop_menu_item_border_radius: 0;
+$desktop_menu_item_transition: .2s;
+$desktop_menu_item_color: #373C41;
+$desktop_menu_item_color_hover: #373C41;
+$desktop_menu_item_bg_color_hover: #efefef;
+$desktop_submenu_width: 220px; // required
+$desktop_submenu_padding_y: 0; // required
+$desktop_submenu_bg_color: #fff;
+$desktop_submenu_box_shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.3);
+$desktop_submenu_item_font_size: 16px;
+$desktop_submenu_item_text_transform: capitalize;
+$desktop_submenu_item_padding: 10px 25px;
+$desktop_submenu_item_color: #000;
+$desktop_submenu_item_color_hover: #fff;
+$desktop_submenu_item_bg_color_hover: #7c7c7c;
+
+//  Mobile Menu
+$mobile_menu_head_padding: 10px 15px;
+$mobile_menu_head_bg_color: #eeeeee;
+$mobile_menu_head_border_color: #eeeeee;
+$mobile_menu_width: 320px; // required
+$mobile_menu_bg_color: #fff;
+$mobile_menu_box_shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.3);
+$mobile_menu_font_size: 18px;
+$mobile_menu_text_transform: inherit;
+$mobile_menu_logo_width: 140px; // required
+$mobile_menu_item_padding: 15px 20px;
+$mobile_menu_item_color: #000;
+$mobile_menu_item_color_current: #fff;
+$mobile_menu_item_bg_color_current: #52585e;
+$mobile_menu_item_border_width: 1px;
+$mobile_menu_item_border_color: #eee;
+$mobile_menu_item_transition: .2s;
+$mobile_menu_button_open_btn_color: #3C3F41;
+$mobile_menu_button_close_btn_color: #3C3F41;
+$mobile_submenu_bg_color: #40464b;
+$mobile_submenu_font_size: 16px;
+$mobile_submenu_text_transform: capitalize;
+$mobile_submenu_item_padding: 10px 15px 10px 35px;
+$mobile_submenu_item_color: #c1c1c1;
+$mobile_submenu_item_color_current:  #fff;
+$mobile_submenu_item_bg_color_current: #1b1b1b;
+$mobile_submenu_nested_bg_color: 626465;
+$mobile_submenu_nested_item_color: #f2f2f2;
+$mobile_submenu_nested_item_padding: 10px 10px 10px 40px;
+
+//  EXTENSIONS: desktop menu item underline hover
+$ext_dmiuh_height: 2px;
+$ext_dmiuh_width: 100%;
+$ext_dmiuh_bg_color: #000;
+
+//  EXTENSIONS: desktop menu icon
+$ext_dmi_font_family: $web_icon_font_family;
+$ext_dmi_icon_symbol: "\f107";
+$ext_dmi_font_size: 14px;
+$ext_dmi_weight: bold;
+$ext_dmi_color: #000;
+$ext_dmi_color__hover: #000;
+$ext_dmi_margin_left: 5px;
+
+//  EXTENSIONS: desktop sub menu icon
+$ext_dsmi_font_family: $web_icon_font_family;
+$ext_dsmi_icon_symbol: "\f105";
+$ext_dsmi_font_size: 12px;
+$ext_dsmi_weight: bold;
+$ext_dsmi_icon_color: #000;
+$ext_dsmi_icon_color__hover: #000;
+
+//  EXTENSIONS: desktop sub menu bottom border
+$ext_dsmbb_border_width: 3px;
+$ext_dsmbb_border_color: #373C41;
+
+//  EXTENSIONS: mobile menu icon
+$ext_mmi_font_size: 18px;
+$ext_mmi_font_weight: bold;
+$ext_mmi_color: #000000;
+$ext_mmi_font_family: $web_icon_font_family;
+$ext_mmi_icon_symbol: "\f107";
+$ext_mmi_icon_symbol_2: '\f105';
+
+
+//  EXTENSIONS: mobile submenu icon
+$ext_msmi_font_size: 14px;
+$ext_msmi_font_weight: bold;
+$ext_msmi_color: #fff;
+$ext_msmi_font_family:  $web_icon_font_family;
+$ext_msmi_icon_symbol: "\f107";
+$ext_msmi_icon_symbol_2: '\f105';
+
+
+//  CLASS: header-jump_js
+$header_jump_transition: .4s cubic-bezier(0.65, 0, 0.35, 1);
+$header_jump_height: 60px;
+
+//  CLASS: header-reduce_js (change height on scroll)
+$header_reduce_height: 60px;
+$header_reduce_transition: .2s linear;
+$header_reduce_logo_width: $header_logo_width;
+
+//  CLASS: header-transparent_js
+$header_transparent_height: 60px;
+$header_transparent_bg_color: rgba(255, 255, 255, 0.03);
+$header_transparent_transition: linear .3s;
+$header_transparent_logo_filter: brightness(200%) grayscale(80%); // logo must be svg;
+$header_transparent_menu_item_color: #fff;
+$header_transparent_menu_item_color_hover: #939393;
+$header_transparent_menu_item_color_active: #939393;
+
