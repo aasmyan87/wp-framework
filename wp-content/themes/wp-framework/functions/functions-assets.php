@@ -1,4 +1,8 @@
 <?php
+/**
+ * Check ACF functions on exist
+ */
+
 
 /**
  * Compress CSS Buffer
@@ -113,7 +117,9 @@ function fw_script( $path = '', $defer = false ){
 /**
  * Load ACF content blocks css (flexible content)
  */
+
 function fw_acf_flex_content_block_css(){
+
     //  ACF: Content Blocks CSS
     if ( have_rows('content_blocks') ) {
         $blocks_css_files = array();
@@ -158,7 +164,9 @@ function fw_acf_flex_content_block_css(){
 /**
  * Load ACF content blocks (flexible content)
  */
+
 function fw_acf_flex_content_block_js(){
+
 
     if ( have_rows('content_blocks') ) {
 

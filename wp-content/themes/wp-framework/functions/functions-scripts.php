@@ -2,6 +2,7 @@
 /**
  * Load JS
  */
+
 function fw_load_scripts(){
     wp_register_script('scripts', get_stylesheet_directory_uri() . '/js/theme/theme.min.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script('scripts');

@@ -14,8 +14,8 @@ $header_height: 80px; //  required
 $header_height_mob: 50px;
 $header_bg_color: #fff;
 $header_box_shadow: 0px 8px 6px -4px rgba(#000, 0.1);
-$header_logo_width: 200px; // required
-$header_logo_width_mob: 120px; // required
+$header_logo_width: 180px; // required
+$header_logo_width_mob: 180px; // required
 $header_container_width: map-get($container, xxl); // required
 $header_container_padding_x:  map-get($grid, gutter_width) * .5; // required
 
@@ -53,7 +53,7 @@ $mobile_menu_bg_color: #fff;
 $mobile_menu_box_shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.3);
 $mobile_menu_font_size: 18px;
 $mobile_menu_text_transform: inherit;
-$mobile_menu_logo_width: 140px; // required
+$mobile_menu_logo_width: 180px; // required
 $mobile_menu_item_padding: 15px 20px;
 $mobile_menu_item_color: #000;
 $mobile_menu_item_color_current: #fff;

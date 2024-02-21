@@ -3,7 +3,6 @@
  * All Media Functions (Images, Videos, Audio)
  */
 
-
 /**
  * Define image new sizes (examples)
  */

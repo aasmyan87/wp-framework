@@ -1,6 +1,7 @@
 <?php
 /* Template Name: Content Blocks */
 get_header();
+
 ?>
     <main id="primary" class="fw-main">
         <?php if ( have_rows('content_blocks') ):

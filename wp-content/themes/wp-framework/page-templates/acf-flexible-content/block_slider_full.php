@@ -1,4 +1,5 @@
 <?php
+
 $slides_count = get_sub_field('slides');
 $dots = get_sub_field('dots');
 $arrows = get_sub_field('arrows');

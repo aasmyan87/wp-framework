@@ -15,5 +15,4 @@ if ( ! defined( 'INLINE_CSS_IDS' ) ) {
     define( '_INLINE_CSS_IDS', true );
 }
 
-
 ?>

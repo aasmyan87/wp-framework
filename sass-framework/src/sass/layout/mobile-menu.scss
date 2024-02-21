@@ -30,13 +30,11 @@
 
     //  Mobile Menu: Logo
     &--head-logo {
+      max-width: $mobile_menu_logo_width;
+      flex: 0 0 $mobile_menu_logo_width;
       a {
         opacity: 1 !important;
         display: block;
-        img {
-          width: $mobile_menu_logo_width;
-          height: auto;
-        }
       }
     }
 

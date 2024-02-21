@@ -10,6 +10,7 @@
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+
 function fw_setup() {
     /*
         * Make theme available for translation.
@@ -114,7 +115,6 @@ function fw_headers(){
 add_filter('wp_headers', 'fw_headers', 10);
 
 
-
 /**
  * Enable the new ACF behavior early
  */
@@ -153,6 +153,8 @@ function my_acf_json_load_point( $paths ) {
     return $paths;
 
 }
+
+
 
 //  Add Analytics example function
 function fw_add_gtag(){

@@ -9,12 +9,6 @@
 
 $site_title = get_bloginfo('name');
 
-$header_mobile_menu_logo_1x = get_field('header_mobile_logo_1x', 'option');
-$header_mobile_menu_logo_2x = get_field('header_mobile_logo_2x', 'option');
-$header_logo_1x = get_field('header_logo_1x', 'option');
-$header_logo_2x = get_field('header_logo_2x', 'option');
-$header_logo_mobile_1x = get_field('header_logo_mobile_1x', 'option');
-$header_logo_mobile_2x = get_field('header_logo_mobile_2x', 'option');
 
 /**
  * Adds custom classes to the array of body classes.
@@ -60,6 +54,148 @@ function fw_favicon(){
     <?php
 }
 add_action('wp_head', 'fw_favicon', 3);
+
+
+/**
+ * Get Mobile Menu Logo
+ */
+function fw_get_mobile_menu_logo(){
+    global $site_title;
+    $header_mobile_menu_logo_1x = get_field('header_mobile_logo_1x', 'option');
+    $header_mobile_menu_logo_2x = get_field('header_mobile_logo_2x', 'option');
+    $header_mobile_logo_width = get_field('header_mobile_logo_width', 'option');
+    ?>
+    <?php if( !empty( $header_mobile_menu_logo_1x ) ): ?>
+         <div class="fw-menu--head-logo" style="max-width: <?php echo $header_mobile_logo_width; ?>px; flex: 0 0 <?php echo $header_mobile_logo_width; ?>px">
+            <a title="<?php echo $site_title; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <?php fw_get_picture( array( $header_mobile_menu_logo_1x, '' ), array( $header_mobile_menu_logo_2x, '' ), '', '', true, $site_title, '' ); ?>
+            </a>
+         </div>
+    <?php else: ?>
+        <div class="fw-menu--head-logo">
+            <a title="<?php echo $site_title; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <?php echo  $site_title; ?>
+            </a>
+        </div>
+    <?php endif; ?>
+    <?php
+}
+
+/**
+ * Get Header Desktop Logo
+ */
+function fw_get_desktop_header_logo(){
+
+    global $site_title;
+    $header_logo_1x = get_field('header_logo_1x', 'option');
+    $header_logo_2x = get_field('header_logo_2x', 'option');
+    $header_logo_width = get_field('header_logo_width', 'option');
+    ?>
+    <?php if( !empty( $header_logo_1x ) ): ?>
+        <a title="<?php echo $site_title; ?>" class="fw-logo d-none d-lg-block" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="max-width: <?php echo $header_logo_width; ?>px; flex: 0 0 <?php echo $header_logo_width; ?>px">
+            <?php fw_get_picture( array( $header_logo_1x, '', '1x' ), array( $header_logo_2x, '', '2x' ), '', true, '', $site_title, '' ); ?>
+        </a>
+    <?php else: ?>
+        <a title="<?php echo $site_title; ?>" class="fw-logo d-none d-lg-block" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <?php echo  $site_title; ?>
+        </a>
+    <?php endif; ?>
+    <?php
+}
+
+/**
+ * Get Header Mobile Logo
+ */
+function fw_get_mobile_header_logo(){
+    global $site_title;
+    $header_logo_mobile_1x = get_field('header_logo_mobile_1x', 'option');
+    $header_logo_mobile_2x = get_field('header_logo_mobile_2x', 'option');
+    $header_logo_width_mobile = get_field('header_logo_width_mobile', 'option');
+    ?>
+    <?php if( !empty( $header_logo_mobile_1x ) ): ?>
+        <a title="<?php echo $site_title; ?>" class="fw-logo d-lg-none" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="max-width: <?php echo $header_logo_width_mobile; ?>px; flex: 0 0 <?php echo $header_logo_width_mobile; ?>px">
+            <?php fw_get_picture( array( $header_logo_mobile_1x, '' ), array( $header_logo_mobile_2x, '' ), '', true, '', $site_title, '' ); ?>
+        </a>
+    <?php else: ?>
+        <a title="<?php echo $site_title; ?>" class="fw-logo d-lg-none text-center" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <?php echo  $site_title; ?>
+        </a>
+    <?php endif; ?>
+    <?php
+}
+
+/**
+ * Menu Navigation (ACF)
+ */
+function fw_navigation(){
+    ?>
+    <nav id="site-navigation" class="mobile-nav_js fw-menu">
+        <div class="fw-menu--mobile-head">
+            <div class="fw-menu--head-logo">
+                <?php fw_get_mobile_menu_logo(); ?>
+            </div>
+            <div class="menu-close-btn menu-close-btn_js">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="fw-menu--mobile-body">
+            <?php
+            if( has_nav_menu('header_menu') ){
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'header_menu',
+                        'menu_id'              => '',
+                        'container'            => '',
+                        'container_class'      => '',
+                        'menu_class'           => 'general-menu_js fw-menu--nav',
+                        'walker' => new New_Theme_Menu()
+                    )
+                );
+            }
+            ?>
+        </div>
+    </nav>
+    <?php
+}
+
+/**
+ * Menu Navigation (Mobile Flipping) (ACF)
+ */
+function fw_flipping_navigation(){
+
+    ?>
+    <nav id="site-navigation" class="mobile-nav_js fw-menu">
+        <div class="fw-menu--mobile-head">
+            <?php fw_get_mobile_menu_logo(); ?>
+            <button aria-label="Close Mobile Menu" class="menu-close-btn menu-close-btn_js">
+                <span></span>
+                <span></span>
+            </button>
+            <button aria-label="Close Mobile Sub Menu"  class="menu-close-sub-btn menu-close-sub-btn_js">
+                <i class="icon-angle-left"></i>
+            </button>
+        </div>
+        <div class="fw-menu--mobile-body">
+            <?php
+            if( has_nav_menu('header_menu') ){
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'header_menu',
+                        'menu_id'              => '',
+                        'container'            => '',
+                        'container_class'      => '',
+                        'menu_class'           => 'general-menu_js fw-menu--nav',
+                        'walker' => new New_Theme_Menu_Flipping()
+                    )
+                );
+            }
+            ?>
+        </div>
+    </nav>
+    <?php
+}
+
 
 /**
  * Get Company Address (ACF)
@@ -248,132 +384,4 @@ function fw_footer_text(){
         </a>
         <?php
     }
-}
-
-/**
- * Get Mobile Menu Logo
- */
-function fw_get_mobile_menu_logo(){
-    global $site_title, $header_mobile_menu_logo_1x, $header_mobile_menu_logo_2x;
-    ?>
-    <?php if( !empty( $header_mobile_menu_logo_1x ) ): ?>
-        <a title="<?php echo $site_title; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <?php fw_get_picture( array( $header_mobile_menu_logo_1x, '' ), array( $header_mobile_menu_logo_2x, '' ), '', '', true, $site_title, '' ); ?>
-        </a>
-    <?php else: ?>
-        <a title="<?php echo $site_title; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            Logo
-        </a>
-    <?php endif; ?>
-    <?php
-}
-
-/**
- * Get Header Desktop Logo
- */
-function fw_get_desktop_header_logo(){
-    global $site_title, $header_logo_1x, $header_logo_2x;
-    ?>
-    <?php if( !empty( $header_logo_1x ) ): ?>
-        <a title="<?php echo $site_title; ?>" class="fw-logo d-none d-lg-block" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <?php fw_get_picture( array( $header_logo_1x, '', '1x' ), array( $header_logo_2x, '', '2x' ), '', true, '', $site_title, '' ); ?>
-        </a>
-    <?php else: ?>
-        <a title="<?php echo $site_title; ?>" class="fw-logo d-none d-lg-block" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            Logo
-        </a>
-    <?php endif; ?>
-    <?php
-}
-
-/**
- * Get Header Mobile Logo
- */
-function fw_get_mobile_header_logo(){
-    global $site_title, $header_logo_mobile_1x, $header_logo_mobile_2x;
-    ?>
-    <?php if( !empty( $header_logo_mobile_1x ) ): ?>
-        <a title="<?php echo $site_title; ?>" class="fw-logo d-lg-none" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <?php fw_get_picture( array( $header_logo_mobile_1x, '' ), array( $header_logo_mobile_2x, '' ), '', true, '', $site_title, '' ); ?>
-        </a>
-    <?php else: ?>
-        <a title="<?php echo $site_title; ?>" class="fw-logo d-lg-none" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            Logo
-        </a>
-    <?php endif; ?>
-    <?php
-}
-
-/**
- * Menu Navigation (ACF)
- */
-function fw_navigation(){
-    ?>
-    <nav id="site-navigation" class="mobile-nav_js fw-menu">
-        <div class="fw-menu--mobile-head">
-            <div class="fw-menu--head-logo">
-                <?php fw_get_mobile_menu_logo(); ?>
-            </div>
-            <div class="menu-close-btn menu-close-btn_js">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <div class="fw-menu--mobile-body">
-            <?php
-            if( has_nav_menu('header_menu') ){
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'header_menu',
-                        'menu_id'              => '',
-                        'container'            => '',
-                        'container_class'      => '',
-                        'menu_class'           => 'general-menu_js fw-menu--nav',
-                        'walker' => new New_Theme_Menu()
-                    )
-                );
-            }
-            ?>
-        </div>
-    </nav>
-    <?php
-}
-
-/**
- * Menu Navigation (Mobile Flipping) (ACF)
- */
-function fw_flipping_navigation(){
-
-    ?>
-    <nav id="site-navigation" class="mobile-nav_js fw-menu">
-        <div class="fw-menu--mobile-head">
-            <div class="fw-menu--head-logo">
-                <?php fw_get_mobile_menu_logo(); ?>
-            </div>
-            <button aria-label="Close Mobile Menu" class="menu-close-btn menu-close-btn_js">
-                <span></span>
-                <span></span>
-            </button>
-            <button aria-label="Close Mobile Sub Menu"  class="menu-close-sub-btn menu-close-sub-btn_js">
-                <i class="icon-angle-left"></i>
-            </button>
-        </div>
-        <div class="fw-menu--mobile-body">
-            <?php
-            if( has_nav_menu('header_menu') ){
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'header_menu',
-                        'menu_id'              => '',
-                        'container'            => '',
-                        'container_class'      => '',
-                        'menu_class'           => 'general-menu_js fw-menu--nav',
-                        'walker' => new New_Theme_Menu_Flipping()
-                    )
-                );
-            }
-            ?>
-        </div>
-    </nav>
-    <?php
 }

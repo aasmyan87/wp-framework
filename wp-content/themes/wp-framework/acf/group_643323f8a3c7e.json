@@ -29,13 +29,12 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33.333",
                 "class": "",
                 "id": ""
             },
-            "uploader": "",
             "return_format": "id",
-            "acfe_thumbnail": 0,
+            "library": "all",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -43,8 +42,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium",
-            "library": "all"
+            "preview_size": "medium"
         },
         {
             "key": "field_64332416eb693",
@@ -56,13 +54,12 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33.333",
                 "class": "",
                 "id": ""
             },
-            "uploader": "",
             "return_format": "id",
-            "acfe_thumbnail": 0,
+            "library": "all",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -70,8 +67,29 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium",
-            "library": "all"
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_65d6257299323",
+            "label": "Logo Width",
+            "name": "header_logo_width",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.333",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 200,
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_65c8bef20f2cd",
@@ -100,7 +118,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33.333",
                 "class": "",
                 "id": ""
             },
@@ -125,7 +143,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33.333",
                 "class": "",
                 "id": ""
             },
@@ -139,6 +157,28 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_65d625e399324",
+            "label": "Mobile Logo Width",
+            "name": "header_logo_width_mobile",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.333",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 120,
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_6433f70aad95c",
@@ -167,7 +207,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33.333",
                 "class": "",
                 "id": ""
             },
@@ -192,7 +232,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33.333",
                 "class": "",
                 "id": ""
             },
@@ -206,6 +246,28 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_65d625fe99325",
+            "label": "Mobile Header Logo Width",
+            "name": "header_mobile_logo_width",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.333",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 140,
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -226,5 +288,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1707655619
+    "modified": 1708551152
 }

@@ -1,21 +1,28 @@
 <?php
 
-$directory = get_template_directory() . '/functions/';
 
-// Get the list of files in the directory
-$files = scandir( $directory );
+require_once 'functions/functions-dev.php';
 
-// Loop through the files
-foreach ( $files as $file ) {
-    // Check if the file is a PHP file
-    if ( pathinfo( $file, PATHINFO_EXTENSION ) === 'php') {
-        // Build the full path to the file
-        $filePath = $directory . $file;
+require_once 'functions/functions-setup.php';
 
-        // Use require_once to include the file
-        require_once $filePath;
-    }
-}
+require_once 'functions/functions-assets.php';
+
+require_once 'functions/functions-media.php';
+
+require_once 'functions/functions-theme.php';
+
+require_once 'functions/functions-blog.php';
+
+require_once 'functions/functions-styles.php';
+
+require_once 'functions/functions-scripts.php';
+
+require_once 'functions/functions-remover.php';
+
+
+
+
+
 
 
 
