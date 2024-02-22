@@ -3,6 +3,7 @@
  * The template for displaying the footer
  */
 $site_title = get_bloginfo('name');
+
 ?>
 
 <footer class="fw-footer">

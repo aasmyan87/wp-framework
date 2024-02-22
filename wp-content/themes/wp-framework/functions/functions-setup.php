@@ -154,8 +154,6 @@ function my_acf_json_load_point( $paths ) {
 
 }
 
-
-
 //  Add Analytics example function
 function fw_add_gtag(){
     if ( $_SERVER['SERVER_NAME'] !== 'localhost' && !is_user_logged_in() ) {

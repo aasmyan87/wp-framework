@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     list-style: none;
-    font-weight: 600;
+    font-weight: $desktop_menu_font_weight;
     letter-spacing: -.5px;
     @include media-breakpoint-down(xl){
       margin-left: 15px;

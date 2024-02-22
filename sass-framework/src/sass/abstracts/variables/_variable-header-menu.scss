@@ -21,6 +21,7 @@ $header_container_padding_x:  map-get($grid, gutter_width) * .5; // required
 
 //  Desktop Menu
 $desktop_menu_font_size: 16px;
+$desktop_menu_font_weight: 600;
 $desktop_menu_line_height: 1;
 $desktop_menu_text_transform: uppercase;
 $desktop_menu_margin_left: 30px;
@@ -52,6 +53,7 @@ $mobile_menu_width: 320px; // required
 $mobile_menu_bg_color: #fff;
 $mobile_menu_box_shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.3);
 $mobile_menu_font_size: 18px;
+$mobile_menu_font_weight: 300;
 $mobile_menu_text_transform: inherit;
 $mobile_menu_logo_width: 180px; // required
 $mobile_menu_item_padding: 15px 20px;

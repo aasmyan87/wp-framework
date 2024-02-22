@@ -48,10 +48,10 @@ function fw_css_files(){
         $css_path . 'components/normalize.css',
         $css_path . 'vendor/bootstrap.css',
         $css_path . 'layout/header.css',
-        $css_path . 'layout/desktop-menu.css',
-        //$css_path . 'layout/desktop-menu-flipping.css',
-        $css_path . 'layout/mobile-menu.css',
-        //$css_path . 'layout/mobile-menu-flipping.css',
+        //$css_path . 'layout/desktop-menu.css',
+        $css_path . 'layout/desktop-menu-flipping.css',
+        //$css_path . 'layout/mobile-menu.css',
+        $css_path . 'layout/mobile-menu-flipping.css',
         $css_path . 'components/typography.css',
         $css_path . 'components/media.css',
         $css_path . 'components/inputs.css',
@@ -89,7 +89,7 @@ function fw_css_files(){
     fw_load_styles(  $css_path . 'classes/css-classes.css' );
 
 }
-//add_action( 'wp_head', 'fw_css_files', 5 );
+add_action( 'wp_head', 'fw_css_files', 5 );
 
 
 /**
@@ -111,9 +111,9 @@ function fw_css_files_all_inline(){
         $css_path . 'components/normalize.css',
         $css_path . 'vendor/bootstrap.css',
         $css_path . 'layout/header.css',
-//        $css_path . 'layout/desktop-menu.css',
+        //$css_path . 'layout/desktop-menu.css',
         $css_path . 'layout/desktop-menu-flipping.css',
-//        $css_path . 'layout/mobile-menu.css',
+        //$css_path . 'layout/mobile-menu.css',
         $css_path . 'layout/mobile-menu-flipping.css',
         $css_path . 'components/typography.css',
         $css_path . 'components/media.css',
@@ -149,4 +149,4 @@ function fw_css_files_all_inline(){
     fw_load_styles_inline(  $css_path . 'classes/css-classes.css' );
 
 }
-add_action( 'wp_head', 'fw_css_files_all_inline', 5 );
+//add_action( 'wp_head', 'fw_css_files_all_inline', 5 );

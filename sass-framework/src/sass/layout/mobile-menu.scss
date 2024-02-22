@@ -82,7 +82,7 @@
       text-transform: $mobile_menu_text_transform;
       flex-flow: column;
       margin: 0;
-      font-weight: normal;
+      font-weight: $mobile_menu_font_weight;
 
       li {
         flex-wrap: wrap;

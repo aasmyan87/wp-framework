@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     list-style: none;
-    font-weight: normal;
+    font-weight: $desktop_menu_font_weight;
     @media screen and (min-width: $media_before_collapse) {
       height: 100%;
     }
