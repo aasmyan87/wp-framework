@@ -1,10 +1,10 @@
 @import "../abstracts/variables/variables-theme";
 
 .fw-fsl{
-  min-height: $bgi_slider__height;
+  height: $bgi_slider__height;
   position: relative;
   @include media-breakpoint-down(lg){
-    min-height: $bgi_slider__height___MOBILE;
+    height: $bgi_slider__height___MOBILE;
 
   }
   &--slide{
