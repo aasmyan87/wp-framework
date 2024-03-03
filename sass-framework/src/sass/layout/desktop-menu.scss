@@ -189,13 +189,6 @@
   }
 }
 
-//  No Display: Mobile Styles
-.menu-overlay,
-.menu-open-btn,
-.mobile-menu-icon,
-.icon-symbol, .icon-symbol::before {
-  display: none;
-}
 
 // ANIMATION: submenu expand
 @keyframes sub-menu-expand--first {
@@ -312,6 +305,5 @@
     border-bottom: $ext_dsmbb_border_width solid $ext_dsmbb_border_color;
   }
 }
-
 
 

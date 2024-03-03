@@ -224,18 +224,20 @@
 
   }
   //  Buttons: Buttons Base
-  .menu-open-btn_js, .menu-close-btn {
+  .menu-open-btn, .menu-close-btn {
     cursor: pointer;
     display: flex;
     flex-flow: column;
     justify-content: center;
+    border: none;
+    background-color: transparent;
     span {
       display: block;
     }
   }
 
   //  Buttons: Mobile Menu Open Button
-  .menu-open-btn_js {
+  .menu-open-btn {
     padding: 15px 15px 15px 0;
 
     span {

@@ -22,11 +22,11 @@
 <header id="masthead" class="fw-header--outer header-jump_js">
     <div class="fw-header">
         <div class="fw-header--container">
-            <div class="menu-open-btn menu-open-btn_js">
+            <button aria-label="Open Mobile Menu" class="menu-open-btn menu-open-btn_js d-lg-none">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
 
             <?php
                 fw_get_desktop_header_logo();

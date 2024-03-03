@@ -134,10 +134,10 @@ function fw_navigation(){
             <div class="fw-menu--head-logo">
                 <?php fw_get_mobile_menu_logo(); ?>
             </div>
-            <div class="menu-close-btn menu-close-btn_js">
+            <button aria-label="Close Mobile Menu" class="menu-close-btn menu-close-btn_js">
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
         <div class="fw-menu--mobile-body">
             <?php
