@@ -189,11 +189,13 @@
   }
 }
 
+
 //  No Display: Mobile Styles
 .menu-overlay,
 .menu-open-btn {
   display: none;
 }
+
 
 // ANIMATION: submenu expand
 @keyframes sub-menu-expand--first {
@@ -280,7 +282,6 @@
   }
 }
 
-
 //  EXTENSIONS: desktop sub menu icon
 .fw-menu--sub {
   > li{
@@ -302,7 +303,6 @@
     }
   }
 }
-
 
 //  EXTENSIONS: desktop sub menu bottom border
 .fw-menu--sub{
