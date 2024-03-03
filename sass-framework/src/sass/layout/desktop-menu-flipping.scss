@@ -217,6 +217,12 @@
   }
 }
 
+//  No Display: Mobile Styles
+.menu-overlay,
+.menu-open-btn {
+  display: none;
+}
+
 
 // ANIMATION: submenu expand
 @keyframes sub-menu-expand--first {

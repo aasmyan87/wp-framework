@@ -22,7 +22,7 @@
 <header id="masthead" class="fw-header--outer header-jump_js">
     <div class="fw-header">
         <div class="fw-header--container">
-            <button aria-label="Open Mobile Menu" class="menu-open-btn menu-open-btn_js d-lg-none">
+            <button aria-label="Open Mobile Menu" class="menu-open-btn menu-open-btn_js">
                 <span></span>
                 <span></span>
                 <span></span>
