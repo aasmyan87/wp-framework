@@ -297,7 +297,6 @@ window.addEventListener('DOMContentLoaded', function() {
             $('body').removeClass('no-transition_js');
         }, 500);
 
-
     });
 
 });
