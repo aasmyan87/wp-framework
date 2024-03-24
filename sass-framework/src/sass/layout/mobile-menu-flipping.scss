@@ -121,6 +121,7 @@
 
     //  Mobile Menu: Submenu First
     &--sub-container{
+      width: $mobile_menu_width;
       display: block;
       position: fixed;
       left: -100%;
@@ -144,9 +145,6 @@
 
       &::-webkit-scrollbar-thumb {
         background-color: #5b5b5b;
-      }
-      @media screen and (max-width: 1024px) and (min-width: 500px) {
-        width: 350px;
       }
     }
     &--sub {
@@ -211,17 +209,13 @@
 
     //  Mobile Menu: direction
     left: calc(-100% - 100px);
-    width: 100%;
+    width: $mobile_menu_width;
     transition: left $menu_open_transition;
     height: 100%;
     display: block;
     top: 0;
     bottom: 0;
     opacity: 1;
-    @media screen and (max-width: 1024px) and (min-width: 500px) {
-      width: 350px;
-    }
-
   }
   //  Buttons: Buttons Base
   .menu-open-btn, .menu-close-btn {
@@ -322,10 +316,8 @@
       animation: opened_menu_cover .3s $menu_open_transition ease-in-out alternate forwards;
       z-index: 99999;
       @if $menu_direction == 'left' {
-        left: 350px;
-        @media screen and (max-width: 1024px) and (min-width: 500px) {
-          display: block;
-        }
+        left: $mobile_menu_width;
+
       }
       @if $menu_direction == 'right' {
         right: $mobile_menu_width;
@@ -339,6 +331,15 @@
   //  Body Overflow: Overflow Hidden when menu opened
   body.no-ovrf {
     overflow: hidden;
+  }
+}
+
+@media screen and (max-width: $mobile_menu_width + 5px){
+  .fw-menu{
+    width: 100%;
+    &--sub-container{
+      width: 100%;
+    }
   }
 }
 
