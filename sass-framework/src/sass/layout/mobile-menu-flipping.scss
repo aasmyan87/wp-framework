@@ -317,6 +317,7 @@
       z-index: 99999;
       @if $menu_direction == 'left' {
         left: $mobile_menu_width;
+        display: block;
 
       }
       @if $menu_direction == 'right' {
