@@ -1,5 +1,7 @@
 //  Fonts
 $menu-font-family: null;
+//  Web Icons Font Family
+$web_icon_font_family: 'fontello';
 //  Menu Direction
 $menu_direction: 'left'; // left | right | full
 $menu_open_transition: .5s;
@@ -45,36 +47,52 @@ $desktop_submenu_item_color: #000;
 $desktop_submenu_item_color_hover: #fff;
 $desktop_submenu_item_bg_color_hover: #7c7c7c;
 
-//  Mobile Menu
-$mobile_menu_head_padding: 10px 15px;
-$mobile_menu_head_bg_color: #eeeeee;
-$mobile_menu_head_border_color: #eeeeee;
+//  Mobile Menu: Body
+$mobile_menu_font_size: 18px;
+$mobile_menu_font_weight: 600;
+$mobile_menu_text_transform: inherit;
 $mobile_menu_width: 380px; // required
 $mobile_menu_bg_color: #fff;
 $mobile_menu_box_shadow: 2px 0 5px 0 rgba(0, 0, 0, 0.3);
-$mobile_menu_font_size: 18px;
-$mobile_menu_font_weight: 300;
-$mobile_menu_text_transform: inherit;
+$mobile_menu_line_height: 1.5;
+//  Mobile Menu: Head
+$mobile_menu_head_padding: 10px 15px;
+$mobile_menu_head_bg_color: #eeeeee;
+$mobile_menu_head_border_color: #eeeeee;
 $mobile_menu_logo_width: 180px; // required
+$mobile_menu_button_open_btn_color: #3C3F41;
+$mobile_menu_button_close_btn_color: #3C3F41;
+//  Mobile Menu: Item
 $mobile_menu_item_padding: 15px 20px;
 $mobile_menu_item_color: #000;
 $mobile_menu_item_color_current: #fff;
-$mobile_menu_item_bg_color_current: #52585e;
-$mobile_menu_item_border_width: 1px;
+$mobile_menu_item_color_hover: $mobile_menu_item_color_current;
+$mobile_menu_item_bg_color_current: map-get($colors, primary);
+$mobile_menu_item_bg_color_hover: $mobile_menu_item_bg_color_current;
 $mobile_menu_item_border_color: #eee;
+$mobile_menu_item_border_width: 1px;
 $mobile_menu_item_transition: .2s;
-$mobile_menu_button_open_btn_color: #3C3F41;
-$mobile_menu_button_close_btn_color: #3C3F41;
-$mobile_submenu_bg_color: #40464b;
+// Mobile Submenu: Body
+$mobile_submenu_bg_color: #fff;
 $mobile_submenu_font_size: 16px;
+$mobile_submenu_line_height: 1.5;
 $mobile_submenu_text_transform: capitalize;
-$mobile_submenu_item_padding: 10px 15px 10px 35px;
-$mobile_submenu_item_color: #c1c1c1;
+//  Mobile Submenu: Sub First - Items
+$mobile_submenu_item_padding: 10px 15px 10px 15px;
+$mobile_submenu_item_color: #000;
 $mobile_submenu_item_color_current:  #fff;
-$mobile_submenu_item_bg_color_current: #1b1b1b;
-$mobile_submenu_nested_bg_color: 626465;
-$mobile_submenu_nested_item_color: #f2f2f2;
-$mobile_submenu_nested_item_padding: 10px 10px 10px 40px;
+$mobile_submenu_item_color_hover: $mobile_submenu_item_color_current;
+$mobile_submenu_item_bg_color_current: map-get($colors, primary);
+$mobile_submenu_item_bg_color_hover: $mobile_submenu_item_bg_color_current;
+//  Mobile Submenu: Sub Second Body
+$mobile_submenu_nested_bg_color: #eee;
+//  Mobile Submenu: Sub Second - Item
+$mobile_submenu_nested_item_color: #000;
+$mobile_submenu_nested_item_color_current: $mobile_submenu_item_color_current;
+$mobile_submenu_nested_item_color_hover: $mobile_submenu_item_color_hover;
+$mobile_submenu_nested_item_bg_color_current: $mobile_submenu_item_bg_color_current;
+$mobile_submenu_nested_item_bg_color_hover: $mobile_submenu_item_bg_color_hover;
+$mobile_submenu_nested_item_padding: 10px 15px 10px 15px;
 
 //  EXTENSIONS: desktop menu item underline hover
 $ext_dmiuh_height: 2px;
