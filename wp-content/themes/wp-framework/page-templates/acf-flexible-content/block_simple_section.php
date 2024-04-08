@@ -31,7 +31,7 @@ If you add to section extra class contains background color, add "has-bg" class 
                 <<?php echo $title_tag; ?> class="fw-section--h <?php if( !empty( $title_class ) ) {  echo $title_class; } ?>"><?php echo $title; ?></<?php echo $title_tag; ?>>
             </header>
         <?php endif; ?>
-        <?php if( !empty( $title ) ) : ?>
+        <?php if( !empty( $text ) ) : ?>
             <?php echo $text; ?>
         <?php endif; ?>
     </div>
