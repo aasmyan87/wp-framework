@@ -34,7 +34,7 @@
 
     //  Mobile Menu: Head
     &--mobile-head {
-      height: 70px;
+      height: $mobile_menu_flipping_head;
       @if($mobile_menu_head_border_color){
         border-bottom: 1px solid $mobile_menu_head_border_color;
       }
@@ -129,7 +129,7 @@
       display: block;
       left: -100%;
       z-index: 33;
-      top: 70px;
+      top: $mobile_menu_flipping_head;
       bottom: 0;
       overflow-y: auto;
       width: $mobile_menu_width;
