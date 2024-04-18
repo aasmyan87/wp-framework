@@ -284,14 +284,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
         fw_change_select_color()
 
-        //  Remove all transitions on resize
-        $(window).resize(function () {
-            $('body').addClass('no-transition_js');
-            setTimeout(function () {
-                $('body').removeClass('no-transition_js');
-            }, 100);
 
-        });
         //  Remove all transitions on load
         setTimeout(function () {
             $('body').removeClass('no-transition_js');
