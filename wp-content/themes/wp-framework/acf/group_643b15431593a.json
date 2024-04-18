@@ -2234,7 +2234,7 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
+            "min": 1,
             "max": "",
             "placeholder": "",
             "step": "",
@@ -2260,5 +2260,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1707605310
+    "modified": 1713473569
 }

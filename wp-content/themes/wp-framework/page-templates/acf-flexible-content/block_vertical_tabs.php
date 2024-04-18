@@ -1,6 +1,5 @@
 <?php
 
-
 $title = get_sub_field('title');
 $title_tag = get_sub_field('title_tag');
 $title_class = get_sub_field('title_class');
@@ -19,7 +18,7 @@ $tab_id = get_row_index();
             <<?php echo $title_tag; ?> class="fw-section--h <?php if( !empty( $title_class ) ) {  echo $title_class; } ?>"><?php echo $title; ?></<?php echo $title_tag; ?>>
             </header>
         <?php endif; ?>
-        <?php if( !empty( $title ) ) : ?>
+        <?php if( !empty( $text ) ) : ?>
             <?php echo $text; ?>
         <?php endif; ?>
 

@@ -30,6 +30,7 @@ get_header();
                         <?php else : ?>
 
                             <?php get_template_part( 'template-parts/content', 'none' ); ?>
+
                         <?php endif; ?>
                     </div>
                     <div class="col-lg-4">

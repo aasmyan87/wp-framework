@@ -109,7 +109,7 @@ function fw_preload_styles( $css_files = [] ) {
  */
 function fw_script( $path = '', $defer = false ){
     ?>
-    <script <?php if( $defer ){ echo 'defer="defer"'; }  ?> src="<?php echo esc_url( get_stylesheet_directory_uri() . $path ) ?>"></script>
+    <script <?php if( $defer ){ echo 'defer="defer"'; }  ?> src="<?php echo esc_url( get_stylesheet_directory_uri() . $path . '?ver=' . _S_VERSION ) ?>"></script>
     <?php
 }
 

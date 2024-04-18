@@ -14,5 +14,3 @@ if ( ! defined( 'INLINE_CSS_IDS' ) ) {
     // Replace the version number of the theme on each release.
     define( '_INLINE_CSS_IDS', true );
 }
-
-?>
